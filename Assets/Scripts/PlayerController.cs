@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     private float storedSpeed;
+    public float platformSpeed;
     public float walkingSpeed = 2f;
     public float airSpeed = 8f;
     public float jumpPower = 10f;
@@ -117,7 +118,16 @@ public class PlayerController : MonoBehaviour
         {
             myAnim.SetBool("isGrounded", true);
             cameraTargetScript.posY = transform.position.y;
-            speed = walkingSpeed;
+
+            if (onMovingPlatform)
+            {
+                speed = platformSpeed;
+            }
+
+            if (!onMovingPlatform)
+            {
+                speed = walkingSpeed;
+            }
                   
 
         }
@@ -151,7 +161,7 @@ public class PlayerController : MonoBehaviour
             //transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
-            speed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
+            platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
 
         }
     

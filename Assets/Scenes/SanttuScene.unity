@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  platformSpeed: 0
   walkingSpeed: 2
   airSpeed: 8
   jumpPower: 2005
