@@ -7,6 +7,7 @@ using UnityEngine.Pool;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    private float storedSpeed;
     public float walkingSpeed = 2f;
     public float airSpeed = 8f;
     public float jumpPower = 10f;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         camController = GameObject.Find("Basic 2D Camera").GetComponent<CameraController>();
         transform.position = playerStart.position;
         myCol = GetComponent<Collider2D>();
+        storedSpeed = speed;
     }
 
     public bool IsGrounded()
@@ -146,9 +148,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
-            transform.parent = collision.gameObject.transform;
+            //transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
+            speed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
 
         }
     
@@ -158,9 +161,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
-            transform.parent = null;
+            //transform.parent = null;
             myCol.sharedMaterial = slide;
             onMovingPlatform = false;
+            speed = storedSpeed;
         }
     }
 
