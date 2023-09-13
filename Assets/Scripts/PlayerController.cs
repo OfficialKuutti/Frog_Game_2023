@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 5f;
+    public float airSpeed = 8f;
     public float jumpPower = 10f;
     private float horizontal;
     public Rigidbody2D myRB;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && IsGrounded()) 
         {
             myRB.AddForce(Vector2.up * jumpPower);
+            
         }
 
         if(context.canceled && myRB.velocity.y > 0f) 
@@ -113,11 +115,13 @@ public class PlayerController : MonoBehaviour
         {
             myAnim.SetBool("isGrounded", true);
             cameraTargetScript.posY = transform.position.y;
+            
 
         }
         else
         {
-            myAnim.SetBool("isGrounded", false);        
+            myAnim.SetBool("isGrounded", false);
+            
         }
 
         if (horizontal != 0f && onMovingPlatform) 
