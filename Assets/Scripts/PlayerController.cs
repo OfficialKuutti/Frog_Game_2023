@@ -6,8 +6,8 @@ using UnityEngine.Pool;
 
 public class PlayerController : MonoBehaviour
 {
-
-    public float speed = 5f;
+    public float speed;
+    public float walkingSpeed = 2f;
     public float airSpeed = 8f;
     public float jumpPower = 10f;
     private float horizontal;
@@ -115,13 +115,14 @@ public class PlayerController : MonoBehaviour
         {
             myAnim.SetBool("isGrounded", true);
             cameraTargetScript.posY = transform.position.y;
-            
+            speed = walkingSpeed;
+                  
 
         }
         else
         {
             myAnim.SetBool("isGrounded", false);
-            
+            speed = airSpeed;
         }
 
         if (horizontal != 0f && onMovingPlatform) 
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour
             transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
+
         }
     
     }
