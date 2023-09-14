@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Pool;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool facingRight = true;
     public bool onMovingPlatform = false;
 
+
     //Variables for groundcheck! Player cant jump until it is ground LAYER
     public float groundCheckRadius = 0.1f;
     public Transform groundCheck;
@@ -35,6 +37,11 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D slide;
     public PhysicsMaterial2D stop;
 
+    //Attack
+    public GameObject tongue;
+    public Animator tongueanim;
+
+   
     
 
     
@@ -68,6 +75,8 @@ public class PlayerController : MonoBehaviour
             myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.6f);
         }
     }
+
+    
     
     //This calls MOVE Inputs on X axis from Unity Input system editor
     public void Move(InputAction.CallbackContext context)
@@ -75,6 +84,20 @@ public class PlayerController : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;    
     }
 
+    
+    public void Fire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            tongueanim.Play("Tongue");
+            Instantiate(tongue, transform.position, transform.rotation);
+            print("ammuttu");
+                      
+            
+        }
+        
+        
+    }
     public void Flip() 
     {
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
