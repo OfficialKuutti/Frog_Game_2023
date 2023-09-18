@@ -91,10 +91,9 @@ public class PlayerController : MonoBehaviour
         {
             tongueanim.Play("Tongue");
             Instantiate(tongue, transform.position, transform.rotation);
-            print("ammuttu");
-                      
+        }    
             
-        }
+        
         
         
     }
