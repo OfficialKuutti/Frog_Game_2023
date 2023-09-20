@@ -217,7 +217,7 @@ SpriteRenderer:
   m_SortingLayerID: -767294663
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1811440979, guid: 6e0d1c073b9faf449be1aae69eee0859, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &95359240
@@ -303,6 +303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.03
+  platformSpeed: 0
+  walkingSpeed: 2
   airSpeed: 8
   jumpPower: 2005
   myRB: {fileID: 95359238}
@@ -320,6 +322,8 @@ MonoBehaviour:
   myCol: {fileID: 0}
   slide: {fileID: 6200000, guid: dfb872fff14ca444a8c2420c81bc809e, type: 2}
   stop: {fileID: 6200000, guid: 923c8fe9b57888542a6629d1a9454735, type: 2}
+  tongue: {fileID: 0}
+  tongueanim: {fileID: 0}
 --- !u!114 &95359243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3645983, y: 0.3653624, z: -10}
+  m_LocalPosition: {x: -6.37214, y: 0.3653624, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1314,7 +1318,7 @@ SpriteRenderer:
   m_SortingLayerID: -1404391543
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1811440979, guid: 6e0d1c073b9faf449be1aae69eee0859, type: 3}
+  m_Sprite: {fileID: 1554028917, guid: 928e41ce8de6469478a0a55f3d580bfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
