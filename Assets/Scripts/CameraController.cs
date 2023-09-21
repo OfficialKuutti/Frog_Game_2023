@@ -51,12 +51,12 @@ public class CameraController : MonoBehaviour
 
         if (facingRight)
         {
-            cameraSettings.m_ScreenX = 0.1f;
+            cameraSettings.m_ScreenX = 1f;
         }
 
         else if (!facingRight)
         {
-            cameraSettings.m_ScreenX = 0.9f;
+            cameraSettings.m_ScreenX = 5f;
         }
     }
    */
