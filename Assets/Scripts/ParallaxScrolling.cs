@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ParallaxScrolling : MonoBehaviour
 {
-    [SerializeField] private float speedX = 0.5f;
-    [SerializeField] private float speedY = 0.2f;
+    [SerializeField] public float speedX = 0.5f;
+    [SerializeField] public float speedY = 0.2f;
     [SerializeField] private Transform cameraPosition;
     
     public float startXPos, startYPos;

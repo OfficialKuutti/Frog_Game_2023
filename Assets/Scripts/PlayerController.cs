@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         cameraTargetScript = GameObject.Find("CameraTarget").GetComponent<CameraTargetScript>();
         camController = GameObject.Find("Basic 2D Camera").GetComponent<CameraController>();
         transform.position = playerStart.position;
-        myCol = GetComponent<Collider2D>();
+        myCol = GetComponent<CircleCollider2D>();
         storedSpeed = speed;
     }
 

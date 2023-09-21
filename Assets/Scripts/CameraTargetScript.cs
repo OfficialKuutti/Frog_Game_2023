@@ -18,6 +18,6 @@ public class CameraTargetScript : MonoBehaviour
     // Can use LateUpdate or FixedUpdate, depends your player moving style
     void LateUpdate()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        transform.position = new Vector3(target.position.x, target.position.y , transform.position.z);
     }
 }
