@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameSceneMountains.unity
     guid: ee2c3b0085b5b0045843b91011bf7892
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameSceneCave.unity
     guid: e1f68e96856171348b7a0885c22128b8
   m_configObjects:
