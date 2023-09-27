@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     public float airSpeed = 8f;
     public float jumpPower = 10f;
     private float horizontal;
+    public float vertical;
     public Rigidbody2D myRB;
     public Animator myAnim;
     public bool facingRight = true;
     public bool onMovingPlatform = false;
+
+    public bool onJumpThruPlatform = false;
+    public GameObject activeJumpThruPlatform;
 
 
     //Variables for groundcheck! Player cant jump until it is ground LAYER
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
         cameraTargetScript = GameObject.Find("CameraTarget").GetComponent<CameraTargetScript>();
         camController = GameObject.Find("Basic 2D Camera").GetComponent<CameraController>();
         transform.position = playerStart.position;
-        myCol = GetComponent<CircleCollider2D>();
+        myCol = GetComponent<BoxCollider2D>();
         storedSpeed = speed;
     }
 
@@ -168,6 +172,12 @@ public class PlayerController : MonoBehaviour
         {
             myCol.sharedMaterial = stop;
         }
+
+        if (vertical < -0.1f && onJumpThruPlatform)
+        {
+            activeJumpThruPlatform.GetComponent<JumpThruPlatform>().StartCoroutine("DropThruPlatform");
+        }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -186,7 +196,13 @@ public class PlayerController : MonoBehaviour
             platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
 
         }
-    
+        
+        if (collision.gameObject.CompareTag("JumpThruPlatform"))
+        {
+            onJumpThruPlatform = true;
+            activeJumpThruPlatform = collision.gameObject;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -198,6 +214,12 @@ public class PlayerController : MonoBehaviour
             onMovingPlatform = false;
             speed = storedSpeed;
         }
+
+        if (collision.gameObject.CompareTag("JumpThruPlatform"))
+        {
+            onJumpThruPlatform = false;
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
