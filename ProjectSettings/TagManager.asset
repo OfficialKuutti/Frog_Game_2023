@@ -8,6 +8,7 @@ TagManager:
   - CheckPoint
   - Bumper
   - MovingPlatform
+  - JumpThruPlatform
   layers:
   - Default
   - TransparentFX
