@@ -7,14 +7,16 @@ public class MovingPlatform : MonoBehaviour
     public Rigidbody2D myRB;
     public float speed = 2f;
     public float speedX = 2f;
-    public float speedY = 0f;
+    public float speedY = 2f;
     
     
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
-        speedX = speed;
+        //speedX = speed;
+        //speedY = speed;
+        
     }
 
     // FixedUpdate with rigidbody, because player and camera uses it too
