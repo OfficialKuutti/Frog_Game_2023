@@ -85,7 +85,8 @@ public class PlayerController : MonoBehaviour
     //This calls MOVE Inputs on X axis from Unity Input system editor
     public void Move(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<Vector2>().x;    
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
     }
 
     
