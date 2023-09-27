@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            camController.ScreenShake();
+            //camController.ScreenShake();
             transform.position = playerStart.position;
         }
 
@@ -206,5 +206,16 @@ public class PlayerController : MonoBehaviour
         {
             playerStart.position = collision.transform.position;
         }
+
+        if(collision.gameObject.name == "MusicZone2")
+        {
+            Camera.main.GetComponent<AudioManager>().musicpoint1 = true;
+        }
+
+        if (collision.gameObject.name == "MusicZone3")
+        {
+            Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
+        }
+
     }
 }
