@@ -8,7 +8,7 @@ public class PauseScript : MonoBehaviour
     public bool paused = false;
 
     public GameObject pauseMenu;
-    public GameObject player;
+    //public GameObject player;
 
 
 

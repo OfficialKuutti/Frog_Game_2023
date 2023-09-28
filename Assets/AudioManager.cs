@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {    
     public AudioSource[] audioSources;
-
+    public float seconds = 25.658f;
    
     public bool musicpoint1 = false;
     public bool musicpoint2 = false;
@@ -22,29 +22,29 @@ public class AudioManager : MonoBehaviour
 
     public IEnumerator PlayNextTrack()
     {
-        yield return new WaitForSeconds(25.846f);
-        audioSources[1].volume = 1f;
-        audioSources[1].Play();
+        yield return new WaitForSeconds(seconds);
+         audioSources[1].volume = 0.7f;
+        //audioSources[1].Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!audioSources[0].isPlaying)
-        {
-            audioSources[1].Play();
-        }
+       
 
         if (musicpoint1 == true)
         {
-            audioSources[1].volume = Mathf.Lerp(audioSources[1].volume, 0f, 1f * Time.deltaTime);
-            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 1f, 1f * Time.deltaTime);
+            audioSources[1].volume = Mathf.Lerp(audioSources[1].volume, 0f, 4f * Time.deltaTime);
+            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0.7f, 2f * Time.deltaTime);
+           
         }
 
         if (musicpoint2 == true)
         {
-            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0f, 1f * Time.deltaTime);
-            audioSources[3].volume = Mathf.Lerp(audioSources[3].volume, 1f, 1f * Time.deltaTime);
+            musicpoint1 = false;
+            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0f, 4f * Time.deltaTime);
+            audioSources[3].volume = Mathf.Lerp(audioSources[3].volume, 0.7f, 2f * Time.deltaTime);
+           
         }
     }
 

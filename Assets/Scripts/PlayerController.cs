@@ -250,5 +250,10 @@ public class PlayerController : MonoBehaviour
             Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
         }
 
+        if (collision.gameObject.name == "MusicZone4")
+        {
+            Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
+        }
+
     }
 }
