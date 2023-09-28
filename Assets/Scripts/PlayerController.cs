@@ -194,7 +194,17 @@ public class PlayerController : MonoBehaviour
             //transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
-            platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
+
+            if(collision.gameObject.GetComponent<MovingPlatform>().speed == 0f)
+            {
+                return;
+            }
+
+            else if (collision.gameObject.GetComponent<MovingPlatform>().speed != 0f)
+            {
+                platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
+            }
+            
 
         }
         
