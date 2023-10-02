@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     public float airSpeed = 8f;
     public float jumpPower = 10f;
     private float horizontal;
+    public float vertical;
     public Rigidbody2D myRB;
     public Animator myAnim;
     public bool facingRight = true;
     public bool onMovingPlatform = false;
+
+    public bool onJumpThruPlatform = false;
+    public GameObject activeJumpThruPlatform;
 
 
     //Variables for groundcheck! Player cant jump until it is ground LAYER
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
         cameraTargetScript = GameObject.Find("CameraTarget").GetComponent<CameraTargetScript>();
         camController = GameObject.Find("Basic 2D Camera").GetComponent<CameraController>();
         transform.position = playerStart.position;
-        myCol = GetComponent<CircleCollider2D>();
+        myCol = GetComponent<BoxCollider2D>();
         storedSpeed = speed;
     }
 
@@ -81,7 +85,8 @@ public class PlayerController : MonoBehaviour
     //This calls MOVE Inputs on X axis from Unity Input system editor
     public void Move(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<Vector2>().x;    
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
     }
 
     
@@ -168,6 +173,12 @@ public class PlayerController : MonoBehaviour
         {
             myCol.sharedMaterial = stop;
         }
+
+        if (vertical < -0.1f && onJumpThruPlatform)
+        {
+            activeJumpThruPlatform.GetComponent<JumpThruPlatform>().StartCoroutine("DropThruPlatform");
+        }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -183,10 +194,26 @@ public class PlayerController : MonoBehaviour
             //transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
-            platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
+
+            if(collision.gameObject.GetComponent<MovingPlatform>().speed == 0f)
+            {
+                return;
+            }
+
+            else if (collision.gameObject.GetComponent<MovingPlatform>().speed != 0f)
+            {
+                platformSpeed = collision.gameObject.GetComponent<MovingPlatform>().speed * 2f;
+            }
+            
 
         }
-    
+        
+        if (collision.gameObject.CompareTag("JumpThruPlatform"))
+        {
+            onJumpThruPlatform = true;
+            activeJumpThruPlatform = collision.gameObject;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -198,6 +225,12 @@ public class PlayerController : MonoBehaviour
             onMovingPlatform = false;
             speed = storedSpeed;
         }
+
+        if (collision.gameObject.CompareTag("JumpThruPlatform"))
+        {
+            onJumpThruPlatform = false;
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -213,6 +246,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if (collision.gameObject.name == "MusicZone3")
+        {
+            Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
+        }
+
+        if (collision.gameObject.name == "MusicZone4")
         {
             Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
         }
