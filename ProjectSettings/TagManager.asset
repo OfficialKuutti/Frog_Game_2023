@@ -9,6 +9,7 @@ TagManager:
   - Bumper
   - MovingPlatform
   - JumpThruPlatform
+  - Collectable
   layers:
   - Default
   - TransparentFX

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6896017431786686089}
-  m_Layer: 6
-  m_Name: MovingEnemy
-  m_TagString: Enemy
+  m_Layer: 0
+  m_Name: MovingCollectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115956301931451192}
   - component: {fileID: 7113787206647320639}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bumper (1)
   m_TagString: Bumper
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 4756671893858053403}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -3.97, z: 0}
+  m_LocalPosition: {x: 5.24, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1817904766705197014}
   - component: {fileID: 8785059197680464972}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bumper
   m_TagString: Bumper
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -137,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 6325332906500710851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63, y: 3.97, z: 0}
+  m_LocalPosition: {x: -3.61, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,10 +200,10 @@ GameObject:
   - component: {fileID: 4842241143192343623}
   - component: {fileID: 5892980271464681419}
   - component: {fileID: 9125460015045064439}
-  - component: {fileID: 6989947268080067645}
-  m_Layer: 6
-  m_Name: Platform
-  m_TagString: MovingPlatform
+  - component: {fileID: 5263848143349248719}
+  m_Layer: 0
+  m_Name: Collectable
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5333142, y: 0}
+  m_Offset: {x: 0.027414322, y: 0.01391077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -318,7 +318,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0906286, y: 1.024}
+  m_Size: {x: 20.447807, y: 20.420822}
   m_EdgeRadius: 0
 --- !u!50 &9125460015045064439
 Rigidbody2D:
@@ -346,8 +346,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &6989947268080067645
+  m_Constraints: 6
+--- !u!114 &5263848143349248719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,9 +356,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7281155489090066037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fd20d16fdedfc41951f77653c7bd72, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cce33292d0a2ba4cb25d187c5657fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myRB: {fileID: 0}
+  speed: 2
   speedX: 2
-  speedY: 0
+  speedY: 2
