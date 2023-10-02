@@ -7,6 +7,8 @@ using UnityEngine.Pool;
 
 public class PlayerController : MonoBehaviour
 {
+    AudioSource jumpSound;
+
     public float speed;
     private float storedSpeed;
     public float platformSpeed;
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         transform.position = playerStart.position;
         myCol = GetComponent<BoxCollider2D>();
         storedSpeed = speed;
+        jumpSound = GetComponent<AudioSource>();
     }
 
     public bool IsGrounded()
@@ -71,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && IsGrounded()) 
         {
             myRB.AddForce(Vector2.up * jumpPower);
-            
+            jumpSound.Play();
         }
 
         if(context.canceled && myRB.velocity.y > 0f) 
