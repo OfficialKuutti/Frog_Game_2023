@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
     public GameObject tongue;
     public Animator tongueanim;
 
+    //ParticleSystem
+    public ParticleSystem dust;
+
    
     
 
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             myRB.AddForce(Vector2.up * jumpPower);
             jumpSound.Play();
+            CreateDust();
         }
 
         if(context.canceled && myRB.velocity.y > 0f) 
@@ -259,4 +263,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    void CreateDust()
+    {
+        dust.Play();
+    }
+
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {    
@@ -9,6 +10,8 @@ public class AudioManager : MonoBehaviour
    
     public bool musicpoint1 = false;
     public bool musicpoint2 = false;
+
+    [SerializeField] Slider volumeSlider;
         
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,17 @@ public class AudioManager : MonoBehaviour
         audioSources[2].volume = 0f;
         audioSources[3].volume = 0f;
         StartCoroutine("PlayNextTrack");
+
+        if (!PlayerPrefs.HasKey("gameVolume"))
+        {
+            PlayerPrefs.SetFloat("gameVolume", 1);
+            Load();
+        }
+
+        else
+        {
+            Load();
+        }
     }
 
     public IEnumerator PlayNextTrack()
@@ -48,5 +62,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-   
+    public void ChangeVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
+        Save();
+    }
+
+    private void Load()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("gameVolume");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat("gameVolume", volumeSlider.value);
+    }
+
 }
