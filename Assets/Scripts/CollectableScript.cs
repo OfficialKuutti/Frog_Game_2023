@@ -46,10 +46,6 @@ public class CollectableScript : MonoBehaviour
             speedX = -speedX;
             speedY = -speedY;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.CompareTag("Player"))
         {
             // Disable the collectable object
@@ -58,6 +54,11 @@ public class CollectableScript : MonoBehaviour
             // Invoke the collect event
             OnCollected?.Invoke();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       
     }
 
 
