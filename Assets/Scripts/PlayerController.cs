@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
     public Animator tongueanim;
 
     //ParticleSystem
-    public ParticleSystem dust;
+    public ParticleSystem jumpDust;
+    public ParticleSystem landingDust;
 
    
     
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             myRB.AddForce(Vector2.up * jumpPower);
             jumpSound.Play();
-            CreateDust();
+            JumpingDust();
         }
 
         if(context.canceled && myRB.velocity.y > 0f) 
@@ -152,6 +153,7 @@ public class PlayerController : MonoBehaviour
         {
             myAnim.SetBool("isGrounded", true);
             cameraTargetScript.posY = transform.position.y;
+            
 
             if (onMovingPlatform)
             {
@@ -201,6 +203,7 @@ public class PlayerController : MonoBehaviour
             //transform.parent = collision.gameObject.transform;
             myCol.sharedMaterial = stop;
             onMovingPlatform = true;
+            LandingDust();
 
             if(collision.gameObject.GetComponent<MovingPlatform>().speed == 0f)
             {
@@ -219,6 +222,13 @@ public class PlayerController : MonoBehaviour
         {
             onJumpThruPlatform = true;
             activeJumpThruPlatform = collision.gameObject;
+            LandingDust();
+        }
+
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+           LandingDust();
         }
 
     }
@@ -263,9 +273,14 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    void CreateDust()
+    void JumpingDust()
     {
-        dust.Play();
+        jumpDust.Play();
+    }
+
+    void LandingDust()
+    {
+        landingDust.Play();
     }
 
 

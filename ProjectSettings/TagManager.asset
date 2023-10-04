@@ -10,6 +10,7 @@ TagManager:
   - MovingPlatform
   - JumpThruPlatform
   - Collectable
+  - Ground
   layers:
   - Default
   - TransparentFX
