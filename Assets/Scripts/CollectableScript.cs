@@ -27,13 +27,14 @@ public class CollectableScript : MonoBehaviour
 
         if (transform.position.x > oldposition)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = true;
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
             oldposition = transform.position.x;
         }
         if (transform.position.x < oldposition)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = false;
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
             oldposition = transform.position.x;
+            
         }
 
     }
