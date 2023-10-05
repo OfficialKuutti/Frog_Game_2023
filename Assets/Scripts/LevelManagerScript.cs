@@ -14,6 +14,7 @@ public class LevelManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         pause = GetComponent<PauseScript>();
         endingPanel.SetActive(false);
         //fadeScreen = GameObject.Find("FadeScreen").GetComponent<Animator>();
@@ -27,6 +28,7 @@ public class LevelManagerScript : MonoBehaviour
 
     public void Changelevel(int levelNumber)
     {
+        
         pause.paused = false;
         //fadeScreen.SetTrigger("ChangeLevel");
         StartCoroutine(NewLevel(levelNumber));
