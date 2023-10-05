@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public GameObject activeJumpThruPlatform;
 
     public Animator collapseAnim;
+    public AudioSource death;
+    public AudioSource rumble;
 
 
     //Variables for groundcheck! Player cant jump until it is ground LAYER
@@ -197,7 +199,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //camController.ScreenShake();
+            death.Play();
             transform.position = playerStart.position;
+            
         }
 
         if (collision.gameObject.CompareTag("MovingPlatform"))
@@ -278,6 +282,7 @@ public class PlayerController : MonoBehaviour
         {
             camController.ScreenShake();
             collapseAnim.SetTrigger("Collapse");
+            rumble.Play();
             collision.gameObject.SetActive(false);
         }
 

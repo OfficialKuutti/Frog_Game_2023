@@ -12,6 +12,8 @@ public class CollectableScript : MonoBehaviour
     public delegate void CollectEvent();
     public event CollectEvent OnCollected;
 
+    public AudioSource slurps;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,8 @@ public class CollectableScript : MonoBehaviour
 
             // Invoke the collect event
             OnCollected?.Invoke();
+
+            slurps.Play();
         }
     }
 

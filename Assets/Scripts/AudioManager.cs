@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
         if (musicpoint1 == true)
         {
             audioSources[1].volume = Mathf.Lerp(audioSources[1].volume, 0f, 4f * Time.deltaTime);
-            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0.7f, 2f * Time.deltaTime);
+            audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0.5f, 2f * Time.deltaTime);
            
         }
 
@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         {
             musicpoint1 = false;
             audioSources[2].volume = Mathf.Lerp(audioSources[2].volume, 0f, 4f * Time.deltaTime);
-            audioSources[3].volume = Mathf.Lerp(audioSources[3].volume, 0.5f, 2f * Time.deltaTime);
+            audioSources[3].volume = Mathf.Lerp(audioSources[3].volume, 0.3f, 2f * Time.deltaTime);
            
         }
     }
