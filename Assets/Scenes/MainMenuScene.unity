@@ -729,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 361, y: -179}
+  m_AnchoredPosition: {x: 361, y: -166}
   m_SizeDelta: {x: 200, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512128539
@@ -943,7 +943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331, y: -215}
+  m_AnchoredPosition: {x: 328, y: -199}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755677623
@@ -1060,7 +1060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.771}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: -118}
+  m_AnchoredPosition: {x: -225.00006, y: 148.00005}
   m_SizeDelta: {x: 609.1646, y: 137.0964}
   m_Pivot: {x: 0.49999994, y: 0.50000024}
 --- !u!114 &767852279
@@ -1085,15 +1085,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: FrOgLoPe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
-  m_sharedMaterial: {fileID: -354766841680531999, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6225a40f046365749a742189909fabca, type: 2}
+  m_sharedMaterial: {fileID: 4837792461593431115, guid: 6225a40f046365749a742189909fabca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255378
-  m_fontColor: {r: 0.0693872, g: 1, b: 0, a: 1}
+    rgba: 4280597593
+  m_fontColor: {r: 0.3483059, g: 0.735849, b: 0.1416162, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1424,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -402, y: 224}
+  m_AnchoredPosition: {x: 122, y: 226}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1169897873
@@ -1868,7 +1868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225.6, y: -255}
+  m_AnchoredPosition: {x: 138, y: -236}
   m_SizeDelta: {x: 200, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479509329
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OfficialKuutti, Karvalakki
+  m_text: 'Made by: OfficialKuutti, Karvalakki'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
   m_sharedMaterial: {fileID: -354766841680531999, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -159.91066, w: 0}
+  m_margin: {x: 0, y: 0, z: -290.64612, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2475,7 +2475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.771}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: -126}
+  m_AnchoredPosition: {x: -221, y: 131}
   m_SizeDelta: {x: 609.1646, y: 137.0964}
   m_Pivot: {x: 0.49999994, y: 0.50000024}
 --- !u!114 &2062447097
@@ -2500,15 +2500,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: FrOgLoPe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
-  m_sharedMaterial: {fileID: -354766841680531999, guid: fcfcb182cdda95b4297c4cfa80632602, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6225a40f046365749a742189909fabca, type: 2}
+  m_sharedMaterial: {fileID: 4837792461593431115, guid: 6225a40f046365749a742189909fabca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278861085
+  m_fontColor: {r: 0.1137255, g: 0.2392157, b: 0.039215688, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
