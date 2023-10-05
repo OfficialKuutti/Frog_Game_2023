@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public bool onJumpThruPlatform = false;
     public GameObject activeJumpThruPlatform;
 
+    public Animator collapseAnim;
+
 
     //Variables for groundcheck! Player cant jump until it is ground LAYER
     public float groundCheckRadius = 0.1f;
@@ -264,13 +266,21 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.name == "MusicZone3")
         {
-            Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
+            Camera.main.GetComponent<AudioManager>().musicpoint1 = true;
         }
 
         if (collision.gameObject.name == "MusicZone4")
         {
             Camera.main.GetComponent<AudioManager>().musicpoint2 = true;
         }
+
+        if (collision.gameObject.name == "CollapseTrigger")
+        {
+            camController.ScreenShake();
+            collapseAnim.SetTrigger("Collapse");
+            collision.gameObject.SetActive(false);
+        }
+
 
     }
     void JumpingDust()
